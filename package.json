@@ -1,7 +1,7 @@
 {
   "name": "react-markdown-renderer",
   "version": "0.1.1",
-  "description": "Render markdown as a React component",
+  "description": "Simple React component that renders Markdown",
   "main": "lib/index.js",
   "files": [
     "lib"
