@@ -10,3 +10,6 @@ node_modules
 
 # lib
 lib
+
+# log
+*.log
