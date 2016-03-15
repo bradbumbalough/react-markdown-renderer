@@ -37,7 +37,9 @@ ReactDOM.render(
 
 ## Contributing
 
-Contributions are very welcome! Please note that by submitting a pull request for this project, you agree to license your contribution under the [MIT License](https://github.com/insidersbyte/react-markdown-renderer/blob/master/LICENSE) to this project.
+Contributions are very welcome!
+
+Please note that by submitting a pull request for this project, you agree to license your contribution under the [MIT License](https://github.com/insidersbyte/react-markdown-renderer/blob/master/LICENSE) to this project.
 
 ## License
 
