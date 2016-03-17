@@ -12,7 +12,7 @@ Simple React component that renders Markdown
 ## Installing
 
 ```bash
-npm install react-markdown-renderer
+npm install react-markdown-renderer --save
 ```
 
 ## Usage
