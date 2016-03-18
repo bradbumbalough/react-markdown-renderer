@@ -7,7 +7,7 @@
     "dist"
   ],
   "scripts": {
-    "start": "webpack-dev-server --content-base pages",
+    "start": "webpack-dev-server",
     "clean-build": "rimraf dist",
     "build": "npm run clean-build && babel src --out-dir dist",
     "build-pages": "npm run clean-build && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
