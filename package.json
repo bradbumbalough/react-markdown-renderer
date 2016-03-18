@@ -15,7 +15,7 @@
     "test": "npm run lint",
     "prepublish": "npm run build && npm test",
     "prepublish-pages": "npm run build-pages",
-    "publish-pages": "node ./tasks/publishPages"
+    "publish-pages": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
