@@ -10,7 +10,7 @@
     "clean": "rimraf dist",
     "start": "webpack-dev-server",
     "build": "npm run clean && babel src --out-dir dist",
-    "build-pages": "npm run clean-build && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
+    "build-pages": "npm run clean && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
     "lint": "eslint --ignore-path .gitignore .",
     "test": "npm run lint",
     "prepublish": "npm run build && npm test",
