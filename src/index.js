@@ -1,14 +1,12 @@
 import React from 'react';
 import marked from 'marked';
 
-class MarkdownRenderer extends React.Component {
-    render() {
-        const html = marked(this.props.markdown || '', { sanitize: true });
+function MarkdownRenderer(props) {
+    const html = marked(props.markdown || '', { sanitize: true });
 
-        return (
-            <div className={this.props.className} dangerouslySetInnerHTML={{ __html: html }}></div>
-        );
-    }
+    return (
+        <div className={props.className} dangerouslySetInnerHTML={{ __html: html }}></div>
+    );
 }
 
 MarkdownRenderer.propTypes = {

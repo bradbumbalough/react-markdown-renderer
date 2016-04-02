@@ -27,7 +27,7 @@ class App extends React.Component {
                 <div>
                     <h2>Markdown Editor</h2>
 
-                    <Textarea value={this.state.markdown} onChange={this.onChange} />
+                    <Textarea value={this.state.markdown} onChange={this.updateMarkdown} />
                 </div>
 
                 <div>

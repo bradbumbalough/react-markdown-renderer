@@ -7,14 +7,14 @@
     "dist"
   ],
   "scripts": {
+    "clean": "rimraf dist",
     "start": "webpack-dev-server",
-    "clean-build": "rimraf dist",
-    "build": "npm run clean-build && babel src --out-dir dist",
+    "build": "npm run clean && babel src --out-dir dist",
     "build-pages": "npm run clean-build && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
     "lint": "eslint --ignore-path .gitignore .",
     "test": "npm run lint",
     "prepublish": "npm run build && npm test",
-    "prepublish-pages": "npm run build-pages",
+    "prepublish-pages": "npm run build-pages && npm test",
     "publish-pages": "gh-pages -d dist"
   },
   "repository": {
@@ -41,7 +41,7 @@
     "babel-preset-react": "^6.5.0",
     "copy-webpack-plugin": "^1.1.1",
     "css-loader": "^0.23.1",
-    "eslint": "^2.5.3",
+    "eslint": "^2.6.0",
     "eslint-config-airbnb": "^6.2.0",
     "eslint-plugin-react": "^4.2.3",
     "gh-pages": "^0.11.0",
