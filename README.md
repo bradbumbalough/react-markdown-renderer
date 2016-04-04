@@ -22,7 +22,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import MarkdownRenderer from 'react-markdown-renderer';
 
-const markdown = '# This is an H1  \n## This is an H2  \n###### This is an H6';
+const markdown = '# This is a H1  \n## This is a H2  \n###### This is a H6';
 
 ReactDOM.render(
   <MarkdownRenderer markdown={markdown} />,

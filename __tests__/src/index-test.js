@@ -9,7 +9,7 @@ import marked from 'marked';
 import MarkdownRenderer from '../../src';
 
 describe('MarkdownRenderer', () => {
-    const markdown = '# This is an H1  \n## This is an H2  \n###### This is an H6';
+    const markdown = '# This is a H1  \n## This is a H2  \n###### This is a H6';
 
     beforeEach(() => {
         marked.mockClear();
