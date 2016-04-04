@@ -4,7 +4,7 @@ import Textarea from 'react-textarea-autosize';
 
 import MarkdownRenderer from '../src';
 
-import './main.styl';
+import './app.styl';
 
 class App extends React.Component {
     constructor() {

@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const StatsPlugin = require('stats-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
     entry: [
@@ -14,12 +16,8 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.css$/,
-                loaders: ['style', 'css'],
-            },
-            {
                 test: /\.styl$/,
-                loaders: ['style', 'css', 'stylus'],
+                loader: ExtractTextPlugin.extract('style', ['css', 'postcss', 'stylus']),
             },
             {
                 test: /\.jsx?$/,
@@ -43,5 +41,7 @@ module.exports = {
             source: false,
             modules: false,
         }),
+        new ExtractTextPlugin('app.css'),
     ],
+    postcss: () => [autoprefixer],
 };
