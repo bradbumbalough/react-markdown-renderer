@@ -15,21 +15,56 @@ describe('MarkdownRenderer', () => {
         marked.mockClear();
     });
 
-    it('renders', () => {
-        const markdownRenderer = TestUtils.renderIntoDocument(
-            <div>
-                <MarkdownRenderer markdown={markdown} />
-            </div>
-        );
+    describe('sets innerHTML', () => {
+        let containerNode;
+        let html;
 
-        const containerNode = ReactDOM.findDOMNode(markdownRenderer);
-        const markdownRendererNode = containerNode.children[0];
+        afterEach(() => {
+            expect(marked.mock.calls.length).toEqual(1);
+            expect(marked).toBeCalledWith(markdown, { sanitize: true });
 
-        expect(markdownRendererNode).toBeDefined();
-        expect(markdownRendererNode).not.toBe(null);
+            const markdownRendererNode = containerNode.children[0];
 
-        expect(marked.mock.calls.length).toEqual(1);
-        expect(marked).toBeCalledWith(markdown, { sanitize: true });
+            expect(markdownRendererNode).toBeDefined();
+            expect(markdownRendererNode).not.toBe(null);
+            expect(markdownRendererNode.innerHTML).toBe(html);
+        });
+
+        describe('marked returns html', () => {
+            beforeEach(() => {
+                html = '<h1>This is a H1</h1>';
+                marked.mockReturnValueOnce(html);
+            });
+
+            it('sets innerHTML to html', () => {
+                const markdownRenderer = TestUtils.renderIntoDocument(
+                    <div>
+                        <MarkdownRenderer markdown={markdown} />
+                    </div>
+                );
+
+                containerNode = ReactDOM.findDOMNode(markdownRenderer);
+            });
+        });
+
+        describe('marked returns empty string', () => {
+            beforeEach(() => {
+                html = '';
+                marked.mockReturnValueOnce(html);
+            });
+
+            it('sets innerHTML to empty string', () => {
+                marked.mockReturnValueOnce('');
+
+                const markdownRenderer = TestUtils.renderIntoDocument(
+                    <div>
+                        <MarkdownRenderer markdown={markdown} />
+                    </div>
+                );
+
+                containerNode = ReactDOM.findDOMNode(markdownRenderer);
+            });
+        });
     });
 
     describe('applies className', () => {
