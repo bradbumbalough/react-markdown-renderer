@@ -39,7 +39,7 @@ describe('MarkdownRenderer', () => {
             expect(markdownRendererNode.innerHTML).toBe(html);
         });
 
-        describe('marked returns html', () => {
+        describe('remarkable returns html', () => {
             beforeEach(() => {
                 html = '<h1>This is a H1</h1>';
                 renderMock.mockReturnValueOnce(html);
@@ -56,7 +56,7 @@ describe('MarkdownRenderer', () => {
             });
         });
 
-        describe('marked returns empty string', () => {
+        describe('remarkable returns empty string', () => {
             beforeEach(() => {
                 html = '';
                 renderMock.mockReturnValueOnce(html);

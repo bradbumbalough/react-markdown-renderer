@@ -10,7 +10,7 @@
 
 [![NPM](https://nodei.co/npm/react-markdown-renderer.png?downloads=true&downloadRank=true)](https://nodei.co/npm/react-markdown-renderer/)
 
-Simple React component that renders Markdown, built with [marked](https://github.com/chjj/marked). 
+Simple React component that renders Markdown, built with [remarkable](https://github.com/jonschlinkert/remarkable). 
 
 ## Installing
 
