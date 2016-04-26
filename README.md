@@ -18,7 +18,7 @@ Simple React component that renders Markdown, built with [remarkable](https://gi
 npm install react-markdown-renderer --save
 ```
 
-## Usage
+## Basic Usage
 
 ```js
 import React from 'react';
@@ -36,7 +36,9 @@ ReactDOM.render(
 ## Props
 
 * markdown (*string*) - the raw markdown that will be converted to html (**required**)
-* className (*string*) - css classes to add to the component (default: '').
+* options (*object*) - the options for remarkable (see [here](https://github.com/jonschlinkert/remarkable#options)) (default: {})
+
+All other props are transferred via spreading (see [here](https://facebook.github.io/react/docs/transferring-props.html)).
 
 ## Contributing
 

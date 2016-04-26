@@ -20,9 +20,9 @@ describe('MarkdownRenderer', () => {
         }));
     });
 
-    // afterEach(() => {
-    //     expect(Remarkable.mock.instances.length).toEqual(1);
-    // });
+    afterEach(() => {
+        expect(renderMock.mock.instances.length).toEqual(1);
+    });
 
     describe('sets innerHTML', () => {
         let containerNode;
