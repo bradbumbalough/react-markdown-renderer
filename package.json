@@ -14,7 +14,8 @@
     "preview",
     "view",
     "render",
-    "renderer"
+    "renderer",
+    "md"
   ],
   "scripts": {
     "clean": "rimraf dist",
