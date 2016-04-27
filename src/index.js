@@ -1,7 +1,7 @@
 import React from 'react';
 import Remarkable from 'remarkable';
 
-function MarkdownRenderer(props) {
+export default function MarkdownRenderer(props) {
     const remarkable = new Remarkable(props.options);
     const html = remarkable.render(props.markdown);
 
@@ -18,5 +18,3 @@ MarkdownRenderer.propTypes = {
 MarkdownRenderer.defaultProps = {
     options: {},
 };
-
-export default MarkdownRenderer;
