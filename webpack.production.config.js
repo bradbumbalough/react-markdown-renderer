@@ -1,9 +1,9 @@
 const path = require('path');
-const webpack = require('webpack');
-const StatsPlugin = require('stats-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const autoprefixer = require('autoprefixer');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack'); // eslint-disable-line import/no-extraneous-dependencies
+const StatsPlugin = require('stats-webpack-plugin'); // eslint-disable-line import/no-extraneous-dependencies
+const ExtractTextPlugin = require('extract-text-webpack-plugin'); // eslint-disable-line import/no-extraneous-dependencies
+const autoprefixer = require('autoprefixer'); // eslint-disable-line import/no-extraneous-dependencies
+const HtmlWebpackPlugin = require('html-webpack-plugin'); // eslint-disable-line import/no-extraneous-dependencies
 
 module.exports = {
     entry: [

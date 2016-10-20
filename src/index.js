@@ -12,7 +12,7 @@ export default function MarkdownRenderer(props) {
 
 MarkdownRenderer.propTypes = {
     markdown: React.PropTypes.string.isRequired,
-    options: React.PropTypes.object,
+    options: React.PropTypes.shape({}),
 };
 
 MarkdownRenderer.defaultProps = {

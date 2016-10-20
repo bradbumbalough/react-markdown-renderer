@@ -1,4 +1,5 @@
 /* eslint-env jest */
+/* eslint-disable import/imports-first, import/no-extraneous-dependencies, react/no-find-dom-node */
 
 jest.unmock('../../src');
 
