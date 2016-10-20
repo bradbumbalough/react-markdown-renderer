@@ -1,11 +1,10 @@
 /* eslint-env jest */
-/* eslint-disable import/imports-first, import/no-extraneous-dependencies, react/no-find-dom-node */
+/* eslint-disable import/imports-first, import/no-extraneous-dependencies */
 
 jest.unmock('../../src');
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import TestUtils from 'react-addons-test-utils';
+import { shallow } from 'enzyme';
 import Remarkable from 'remarkable';
 import MarkdownRenderer from '../../src';
 
@@ -26,18 +25,13 @@ describe('MarkdownRenderer', () => {
     });
 
     describe('sets innerHTML', () => {
-        let containerNode;
+        let markdownRenderer;
         let html;
 
         afterEach(() => {
             expect(renderMock.mock.calls.length).toEqual(1);
             expect(renderMock).toBeCalledWith(markdown);
-
-            const markdownRendererNode = containerNode.children[0];
-
-            expect(markdownRendererNode).toBeDefined();
-            expect(markdownRendererNode).not.toBe(null);
-            expect(markdownRendererNode.innerHTML).toBe(html);
+            expect(markdownRenderer.html()).toBe(`<div>${html}</div>`);
         });
 
         describe('remarkable returns html', () => {
@@ -47,13 +41,9 @@ describe('MarkdownRenderer', () => {
             });
 
             it('sets innerHTML to html', () => {
-                const markdownRenderer = TestUtils.renderIntoDocument(
-                    <div>
-                        <MarkdownRenderer markdown={markdown} />
-                    </div>
+                markdownRenderer = shallow(
+                    <MarkdownRenderer markdown={markdown} />
                 );
-
-                containerNode = ReactDOM.findDOMNode(markdownRenderer);
             });
         });
 
@@ -64,44 +54,20 @@ describe('MarkdownRenderer', () => {
             });
 
             it('sets innerHTML to empty string', () => {
-                const markdownRenderer = TestUtils.renderIntoDocument(
-                    <div>
-                        <MarkdownRenderer markdown={markdown} />
-                    </div>
+                markdownRenderer = shallow(
+                    <MarkdownRenderer markdown={markdown} />
                 );
-
-                containerNode = ReactDOM.findDOMNode(markdownRenderer);
             });
         });
     });
 
-    describe('applies className', () => {
-        it('defaults empty', () => {
-            const markdownRenderer = TestUtils.renderIntoDocument(
-                <div>
-                    <MarkdownRenderer markdown={markdown} />
-                </div>
-            );
+    it('applies className', () => {
+        const className = 'one two three';
 
-            const containerNode = ReactDOM.findDOMNode(markdownRenderer);
-            const markdownRendererNode = containerNode.children[0];
+        const markdownRenderer = shallow(
+            <MarkdownRenderer markdown={markdown} className={className} />
+        );
 
-            expect(markdownRendererNode.className).toBe('');
-        });
-
-        it('applies className', () => {
-            const className = 'one two three';
-
-            const markdownRenderer = TestUtils.renderIntoDocument(
-                <div>
-                    <MarkdownRenderer markdown={markdown} className={className} />
-                </div>
-            );
-
-            const containerNode = ReactDOM.findDOMNode(markdownRenderer);
-            const markdownRendererNode = containerNode.children[0];
-
-            expect(markdownRendererNode.className).toBe(className);
-        });
+        expect(markdownRenderer.hasClass(className)).toBe(true);
     });
 });

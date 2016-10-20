@@ -58,6 +58,7 @@
     "codeclimate-test-reporter": "^0.4.0",
     "coveralls": "^2.11.9",
     "css-loader": "^0.25.0",
+    "enzyme": "^2.5.1",
     "eslint": "^3.8.1",
     "eslint-config-airbnb": "^12.0.0",
     "eslint-plugin-import": "^2.0.1",
@@ -86,7 +87,8 @@
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react",
       "<rootDir>/node_modules/react-dom",
-      "<rootDir>/node_modules/react-addons-test-utils"
+      "<rootDir>/node_modules/react-addons-test-utils",
+      "<rootDir>/node_modules/enzyme"
     ]
   }
 }
