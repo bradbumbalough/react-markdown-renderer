@@ -27,7 +27,8 @@
     "test": "npm run lint && npm run jest",
     "prepublish": "npm run build && npm test",
     "prepublish-pages": "npm run build-pages && npm test",
-    "publish-pages": "gh-pages -d dist"
+    "publish-pages": "gh-pages -d dist",
+    "np": "np"
   },
   "repository": {
     "type": "git",
@@ -68,6 +69,7 @@
     "gh-pages": "^0.11.0",
     "html-webpack-plugin": "^2.17.0",
     "jest-cli": "^16.0.2",
+    "np": "^2.9.0",
     "postcss-loader": "^1.0.0",
     "react": "^15.0.2",
     "react-addons-test-utils": "^15.0.2",
