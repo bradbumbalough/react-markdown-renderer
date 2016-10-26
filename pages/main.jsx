@@ -1,25 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Textarea from 'react-textarea-autosize';
-
+import ReactDOM from 'react-dom'; // eslint-disable-line import/no-extraneous-dependencies
+import Textarea from 'react-textarea-autosize'; // eslint-disable-line import/no-extraneous-dependencies
 import MarkdownRenderer from '../src';
-
 import './app.styl';
 
 class App extends React.Component {
-    constructor() {
-        super();
+    state = {
+        markdown: '# This is a H1  \n## This is a H2  \n###### This is a H6',
+    };
 
-        this.state = {
-            markdown: '# This is a H1  \n## This is a H2  \n###### This is a H6',
-        };
-
-        this.updateMarkdown = this.updateMarkdown.bind(this);
-    }
-
-    updateMarkdown(event) {
+    updateMarkdown = (event) => {
         this.setState({ markdown: event.target.value });
-    }
+    };
 
     render() {
         return (
