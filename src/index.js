@@ -1,7 +1,14 @@
+/* @flow */
+
 import React from 'react';
 import Remarkable from 'remarkable';
 
-export default function MarkdownRenderer({ markdown, options = {}, ...props }) {
+type PropsType = {
+    markdown: string,
+    options?: Object,
+};
+
+export default function MarkdownRenderer({ markdown, options = {}, ...props }: PropsType) {
     const remarkable = new Remarkable(options);
     const html = remarkable.render(markdown);
 
@@ -9,8 +16,3 @@ export default function MarkdownRenderer({ markdown, options = {}, ...props }) {
         <div {...props} dangerouslySetInnerHTML={{ __html: html }} />
     );
 }
-
-MarkdownRenderer.propTypes = {
-    markdown: React.PropTypes.string.isRequired,
-    options: React.PropTypes.shape({}),
-};

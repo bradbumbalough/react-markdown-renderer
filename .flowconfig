@@ -1,0 +1,5 @@
+[ignore]
+.*/node_modules/babel-plugin-flow-react-proptypes/src/__test__/.*
+
+[options]
+module.name_mapper.extension='styl' -> '<PROJECT_ROOT>/flow/CSSModule.js.flow'

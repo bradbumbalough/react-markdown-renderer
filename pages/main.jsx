@@ -1,3 +1,5 @@
+/* @flow */
+
 import React from 'react';
 import ReactDOM from 'react-dom'; // eslint-disable-line import/no-extraneous-dependencies
 import Textarea from 'react-textarea-autosize'; // eslint-disable-line import/no-extraneous-dependencies
