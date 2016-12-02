@@ -1,5 +1,5 @@
 /* eslint-env jest */
-/* eslint-disable import/imports-first, import/no-extraneous-dependencies */
+/* eslint-disable import/first, import/no-extraneous-dependencies */
 
 jest.unmock('../../src');
 
@@ -42,7 +42,7 @@ describe('MarkdownRenderer', () => {
 
             it('sets innerHTML to html', () => {
                 markdownRenderer = shallow(
-                    <MarkdownRenderer markdown={markdown} />
+                    <MarkdownRenderer markdown={markdown} />,
                 );
             });
         });
@@ -55,7 +55,7 @@ describe('MarkdownRenderer', () => {
 
             it('sets innerHTML to empty string', () => {
                 markdownRenderer = shallow(
-                    <MarkdownRenderer markdown={markdown} />
+                    <MarkdownRenderer markdown={markdown} />,
                 );
             });
         });
@@ -65,7 +65,7 @@ describe('MarkdownRenderer', () => {
         const className = 'one two three';
 
         const markdownRenderer = shallow(
-            <MarkdownRenderer markdown={markdown} className={className} />
+            <MarkdownRenderer markdown={markdown} className={className} />,
         );
 
         expect(markdownRenderer.hasClass(className)).toBe(true);
