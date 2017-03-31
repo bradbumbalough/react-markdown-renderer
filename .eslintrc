@@ -1,17 +1,13 @@
 {
-    "parser": "babel-eslint",
-    "extends": "airbnb",
+  "parser": "babel-eslint",
+  "extends": "airbnb",
 
-    "env": {
-        "browser": true
-    },
+  "env": {
+    "browser": true
+  },
 
-    "rules": {
-        "indent": [2, 4, {"SwitchCase": 1}],
-        "max-len": [2, 140, 2],
-
-        "react/jsx-indent-props": [2, 4],
-        "react/jsx-indent": [2, 4],
-        "react/jsx-filename-extension": 1
-    }
+  "rules": {
+    "react/require-default-props": 1,
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }]
+  }
 }

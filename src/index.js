@@ -9,10 +9,10 @@ type PropsType = {
 };
 
 export default function MarkdownRenderer({ markdown, options = {}, ...props }: PropsType) {
-    const remarkable = new Remarkable(options);
-    const html = remarkable.render(markdown);
+  const remarkable = new Remarkable(options);
+  const html = remarkable.render(markdown);
 
-    return (
-        <div {...props} dangerouslySetInnerHTML={{ __html: html }} />
-    );
+  return (
+    <div {...props} dangerouslySetInnerHTML={{ __html: html }} />
+  );
 }
