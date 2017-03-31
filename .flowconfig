@@ -1,4 +1,7 @@
 [ignore]
 
+[include]
+
+[libs]
+
 [options]
-module.name_mapper.extension='styl' -> 'empty/object'
