@@ -9,7 +9,9 @@
 [![peerDependency Status](https://david-dm.org/insidersbyte/react-markdown-renderer/peer-status.svg)](https://david-dm.org/insidersbyte/react-markdown-renderer#info=peerDependencies)
 [![devDependency Status](https://david-dm.org/insidersbyte/react-markdown-renderer/dev-status.svg)](https://david-dm.org/insidersbyte/react-markdown-renderer#info=devDependencies)
 
-[![NPM](https://nodei.co/npm/react-markdown-renderer.png?downloads=true&downloadRank=true)](https://nodei.co/npm/react-markdown-renderer/)
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/eckdU4tK7fdQZWddNXDRUg6N/InsidersByte/react-markdown-renderer'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/eckdU4tK7fdQZWddNXDRUg6N/InsidersByte/react-markdown-renderer.svg' />
+</a>
 
 Simple React component that renders Markdown, built with [remarkable](https://github.com/jonschlinkert/remarkable). 
 
