@@ -13,6 +13,8 @@
   <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/eckdU4tK7fdQZWddNXDRUg6N/InsidersByte/react-markdown-renderer.svg' />
 </a>
 
+<hr style="" />
+
 Simple React component that renders Markdown, built with [remarkable](https://github.com/jonschlinkert/remarkable). 
 
 ## Installing
