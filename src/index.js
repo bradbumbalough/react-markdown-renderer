@@ -18,16 +18,16 @@ type PropsType = {
   },
   rules?: {
     block?: {
-      enable?: array,
-      disable?: array,
+      enable?: string[],
+      disable?: string[],
     },
     core?: {
-      enable?: array,
-      disable?: array,
+      enable?: string[],
+      disable?: string[],
     },
     inline?: {
-      enable?: array,
-      disable?: array,
+      enable?: string[],
+      disable?: string[],
     },
   },
 };
