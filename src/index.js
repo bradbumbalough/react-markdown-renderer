@@ -38,7 +38,7 @@ const MarkdownRenderer = ({
   rules,
   ...props
 }: PropsType) => {
-  const remarkable = new Remarkable(preset || 'default', options);
+  const remarkable: Object = new Remarkable(preset || 'default', options);
 
   /* rule is an object used to enable/disable rules.
     {
@@ -54,11 +54,13 @@ const MarkdownRenderer = ({
     }
   */
   if (rules) {
-    Object.keys(rules).forEach(rule => {
-      if (remarkable[rule] && remarkable[rule].ruler) {
-        Object.keys(rules[rule]).forEach(flag => {
-          if (remarkable[rule].ruler[flag]) {
-            remarkable[rule].ruler[flag](rules[rule][flag]);
+    const ruleObject = rules;
+
+    Object.keys(ruleObject).forEach((ruleKey: string) => {
+      if (ruleKey && remarkable[ruleKey] && remarkable[ruleKey].ruler) {
+        Object.keys(ruleObject[ruleKey]).forEach((flagKey: string) => {
+          if (remarkable[ruleKey].ruler[flagKey]) {
+            remarkable[ruleKey].ruler[flagKey](ruleObject[ruleKey][flagKey]);
           }
         });
       }
